@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Проект GNC. Рецензия кода. Автор an1zhegorodov</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Проект GNC. Рецензия кода.</h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.com/an1zhegorodov/gnc" class="btn">Смотреть на GitHub</a>
+      <a href="https://github.com/an1zhegorodov/gnc/zipball/master" class="btn">Скачать .zip</a>
+      <a href="https://github.com/an1zhegorodov/gnc/tarball/master" class="btn">Скачать .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <p><a href="/gnc/rus.html" title="Русский">Русский</a> |
+<a href="/gnc" title="Английский">Английский</a></p>
+
+<h2>
+<a id="architecture" class="anchor" href="#architecture" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Архитектура</h2>
+
+<ul>
+<li>CMSBundle:
+
+<ul>
+<li>Распределение функционала по контроллерам - <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/CmsBundle/Controller/?at=master">Хорошо</a>
+</li>
+<li>Распределение страниц по шаблонам - <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/CmsBundle/Resources/views/?at=master">Хорошо</a>
+</li>
+<li>Нет отдельного слоя бизнес логики (вся логика в контроллерах) - <a href="https://sites.google.com/site/dhntclub/thiet-ke-web-site/trao-doi/the-m-in-mvc-why-models-are-misunderstood-and-unappreciated">Плохо</a>
+</li>
+</ul>
+</li>
+<li>ExchangerBundle:
+
+<ul>
+<li>Распределение функционала по контроллерам - <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/ExchangerBundle/Controller/?at=master">Хорошо</a>
+</li>
+<li>Распределение страниц по шаблонам - <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/ExchangerBundle/Resources/views/?at=master">Хорошо</a>
+</li>
+<li>Формы вынесены в отдельные классы - <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/ExchangerBundle/Form/Type/?at=master">Хорошо</a>
+</li>
+<li>Нет отдельного слоя бизнес логики (вся логика в контроллерах) - <a href="https://sites.google.com/site/dhntclub/thiet-ke-web-site/trao-doi/the-m-in-mvc-why-models-are-misunderstood-and-unappreciated">Плохо</a>
+</li>
+</ul>
+</li>
+<li>MainBundle:
+
+<ul>
+<li>Распределение функционала по контроллерам - <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/MainBundle/Controller/?at=master">Плохо</a>
+</li>
+<li>Распределение страниц по шаблонам - <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/MainBundle/Resources/views/?at=master">Good</a>
+</li>
+<li>Нет отдельного слоя бизнес логики (вся логика в контроллерах) - <a href="https://sites.google.com/site/dhntclub/thiet-ke-web-site/trao-doi/the-m-in-mvc-why-models-are-misunderstood-and-unappreciated">Плохо</a>
+</li>
+</ul>
+</li>
+<li>UserBundle:
+
+<ul>
+<li>Распределение функционала по контроллерам - <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/UserBundle/Controller/?at=master">Хорошо</a>
+</li>
+<li>Распределение страниц по шаблонам - <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/UserBundle/Resources/views/?at=master">Хорошо</a>
+</li>
+<li>Формы вынесены в отдельные классы - <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/UserBundle/Form/Type/?at=master">Хорошо</a>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>Резюме: Классические для Symfony2 неймспейсы - легко сразу понять структуру. Функционал разбит на 4 основных части (бандла), каждая представляет отдельный юнит приложения, хорошо для быстрой навигации по проекту. Контроллеры содержат всю бизнес логику, что плохо для повторного использования кода, тестирования и поддержки.</p>
+
+<h2>
+<a id="tests" class="anchor" href="#tests" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Тестирование</h2>
+
+<ul>
+<li>Юнит тесты отстутствуют - Плохо</li>
+<li>Интеграционные тесты отстутствуют - Плохо</li>
+<li>UI тесты отстутствуют - Плохо</li>
+</ul>
+
+<h2>
+<a id="code-quality" class="anchor" href="#code-quality" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Качество кода</h2>
+
+<ul>
+<li>### <a href="/gnc/report.html">Статический анализ</a>
+</li>
+<li>### Бэкенд
+
+<ul>
+<li>Использование json файлов вместо базы данных или keyvalue хранилища - Плохо <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/ExchangerBundle/Controller/RateController.php?at=master&amp;fileviewer=file-view-default#RateController.php-38">1</a>
+</li>
+<li>Конфигурация роутинга структурирована и комментирована - Хорошо <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/CmsBundle/Resources/config/routing.yml?at=master&amp;fileviewer=file-view-default">1</a> <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/CmsBundle/Resources/config/routing.yml?at=master&amp;fileviewer=file-view-default">2</a> <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/MainBundle/Resources/config/routing.yml?at=master&amp;fileviewer=file-view-default">3</a> <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/UserBundle/Resources/config/routing.yml?at=master&amp;fileviewer=file-view-default">4</a>
+</li>
+<li>Нет разграничения между роутами для администратора и пользователя - Плохо <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/CmsBundle/Resources/config/routing.yml?at=master&amp;fileviewer=file-view-default#routing.yml-41">1</a> <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/CmsBundle/Resources/config/routing.yml?at=master&amp;fileviewer=file-view-default#routing.yml-21">2</a>
+</li>
+<li>"Толстые" контроллеры, бизнес логика не вынесена в отдельный слой - <a href="https://sites.google.com/site/dhntclub/thiet-ke-web-site/trao-doi/the-m-in-mvc-why-models-are-misunderstood-and-unappreciate">Очень плохо</a>
+</li>
+<li>Неконсистентное форматирование кода - Очень плохо</li>
+<li>Именование не несущее должного описания - Плохо <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/UserBundle/Controller/DefaultController.php?at=master&amp;fileviewer=file-view-default#DefaultController.php-11">1</a> <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/MainBundle/Controller/DefaultController.php?at=master&amp;fileviewer=file-view-default">2</a>
+</li>
+<li>Конфигурация в свойствах обьекта - <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/CmsBundle/Controller/BlogController.php?at=master&amp;fileviewer=file-view-default#BlogController.php-12">Плохо</a>
+</li>
+<li>Логика постраничной навигация дублируется много раз - Очень плохо <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/CmsBundle/Controller/BlogController.php?at=master&amp;fileviewer=file-view-default#BlogController.php-128">1</a> <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/CmsBundle/Controller/BlogController.php?at=master&amp;fileviewer=file-view-default#BlogController.php-35">2</a> <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/CmsBundle/Controller/BlogController.php?at=master&amp;fileviewer=file-view-default#BlogController.php-162">3</a> <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/CmsBundle/Controller/CommentController.php?at=master&amp;fileviewer=file-view-default#CommentController.php-470">4</a>
+</li>
+<li>Доступ к объектам репозиториев через менеджер сущностей - Плохо <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/CmsBundle/Controller/CommentController.php?at=master&amp;fileviewer=file-view-default#CommentController.php-466">1</a> <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/CmsBundle/Controller/PageController.php?at=master&amp;fileviewer=file-view-default#PageController.php-76">1</a> <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/CmsBundle/Controller/PageController.php?at=master&amp;fileviewer=file-view-default#PageController.php-66">2</a> <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/CmsBundle/Controller/WikiPageController.php?at=master&amp;fileviewer=file-view-default#WikiPageController.php-40">3</a>
+</li>
+<li>Написание форм прямо в контроллере - Плохо <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/CmsBundle/Controller/WikiPageController.php?at=master&amp;fileviewer=file-view-default#WikiPageController.php-126">1</a> <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/CmsBundle/Controller/FaqController.php?at=master&amp;fileviewer=file-view-default#FaqController.php-44">2</a> <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/ExchangerBundle/Controller/ExchangerAdminController.php?at=master&amp;fileviewer=file-view-default#ExchangerAdminController.php-70">3</a> <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/ExchangerBundle/Controller/RatingController.php?at=master&amp;fileviewer=file-view-default#RatingController.php-19">4</a>
+</li>
+</ul>
+</li>
+<li>
+<h3>
+<a id="front-end" class="anchor" href="#front-end" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Фронтенд</h3>
+
+<ul>
+<li>Аккуратные html.twig шаблоны - Хорошо</li>
+<li>Использование селекторов одних и тех же селекторов для CSS и Javascript - Плохо <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/MainBundle/Resources/public/js/apps-onepage.js?at=master&amp;fileviewer=file-view-default">1</a> <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/MainBundle/Resources/public/js/apps.js?at=master&amp;fileviewer=file-view-default">2</a>
+</li>
+<li>Дублирование кода - Плохо <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/MainBundle/Resources/public/js/apps-onepage.js?at=master&amp;fileviewer=file-view-default">1</a>
+</li>
+</ul>
+</li>
+<li>
+<h2>
+<a id="recommendations" class="anchor" href="#recommendations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Рекоммендации</h2>
+
+<ul>
+<li>Исправления в порядке приоритета
+
+<ul>
+<li>Выбрать стандарт кодирования и переформатировать код согласно этого стандарта</li>
+<li>Перенести операции работы с базой данных в соотвествующие репозитории</li>
+<li>Перенести формы в отдельные классы</li>
+<li>Сделать контроллеры "тонкими", то есть перенести бизнес логику в отдельный слой</li>
+<li>Перенести рейты из json файлов в базу данных или keyvalue хранилище</li>
+<li>Отрефакторить jquery код (пример ниже)</li>
+</ul>
+</li>
+</ul>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c">// До</span>
+<span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>#btn-toggle-nav<span class="pl-pds">"</span></span>).<span class="pl-c1">click</span>(<span class="pl-k">function</span>(){
+    <span class="pl-s"><span class="pl-pds">"</span>use strict<span class="pl-pds">"</span></span>;
+    <span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>.menus<span class="pl-pds">"</span></span>).<span class="pl-en">toggleClass</span>(<span class="pl-s"><span class="pl-pds">"</span>toggle-nav<span class="pl-pds">"</span></span>);
+});
+
+<span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>#nav-icon-search<span class="pl-pds">"</span></span>).<span class="pl-c1">click</span>(<span class="pl-k">function</span>(){
+    <span class="pl-s"><span class="pl-pds">"</span>use strict<span class="pl-pds">"</span></span>;
+    <span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>#search-sub<span class="pl-pds">"</span></span>).<span class="pl-en">toggleClass</span>(<span class="pl-s"><span class="pl-pds">"</span>visible<span class="pl-pds">"</span></span>);
+});
+<span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>#nav-icon-phone<span class="pl-pds">"</span></span>).<span class="pl-c1">click</span>(<span class="pl-k">function</span>(){
+    <span class="pl-s"><span class="pl-pds">"</span>use strict<span class="pl-pds">"</span></span>;
+    <span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>#phone-sub<span class="pl-pds">"</span></span>).<span class="pl-en">toggleClass</span>(<span class="pl-s"><span class="pl-pds">"</span>visible<span class="pl-pds">"</span></span>);
+});
+
+<span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>#btn-icon-search<span class="pl-pds">"</span></span>).<span class="pl-c1">click</span>(<span class="pl-k">function</span>(){
+    <span class="pl-s"><span class="pl-pds">"</span>use strict<span class="pl-pds">"</span></span>;
+    <span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>#search-sub<span class="pl-pds">"</span></span>).<span class="pl-en">toggleClass</span>(<span class="pl-s"><span class="pl-pds">"</span>visible<span class="pl-pds">"</span></span>);
+});
+<span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>#btn-icon-phone<span class="pl-pds">"</span></span>).<span class="pl-c1">click</span>(<span class="pl-k">function</span>(){
+    <span class="pl-s"><span class="pl-pds">"</span>use strict<span class="pl-pds">"</span></span>;
+    <span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>#phone-sub<span class="pl-pds">"</span></span>).<span class="pl-en">toggleClass</span>(<span class="pl-s"><span class="pl-pds">"</span>visible<span class="pl-pds">"</span></span>);
+});</pre></div>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c">// После</span>
+<span class="pl-en">$</span>(<span class="pl-c1">document</span>).<span class="pl-en">on</span>(<span class="pl-s"><span class="pl-pds">'</span>click<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>.js-class-toggle<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>() {
+    <span class="pl-k">var</span> $<span class="pl-v">this</span> <span class="pl-k">=</span> <span class="pl-en">$</span>(<span class="pl-v">this</span>);
+    <span class="pl-k">var</span> classToToggle <span class="pl-k">=</span> <span class="pl-smi">$this</span>.<span class="pl-c1">data</span>(<span class="pl-s"><span class="pl-pds">'</span>toggle-class<span class="pl-pds">'</span></span>);
+    <span class="pl-k">var</span> targetSelector <span class="pl-k">=</span> <span class="pl-smi">$this</span>.<span class="pl-c1">data</span>(<span class="pl-s"><span class="pl-pds">'</span>toggle-target<span class="pl-pds">'</span></span>);
+    <span class="pl-en">$</span>(targetSelector).<span class="pl-en">each</span>(<span class="pl-k">function</span>(<span class="pl-smi">index</span>, <span class="pl-smi">element</span>) {
+        <span class="pl-en">$</span>(element).<span class="pl-en">toggleClass</span>(classToToggle);
+    });
+});</pre></div>
+</li>
+</ul>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/an1zhegorodov/gnc">Проект GNC. Рецензия кода.</a> Автор <a href="https://github.com/an1zhegorodov">an1zhegorodov</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
