@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Gnc by an1zhegorodov</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Gnc</h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.com/an1zhegorodov/gnc" class="btn">View on GitHub</a>
+      <a href="https://github.com/an1zhegorodov/gnc/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/an1zhegorodov/gnc/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="gnc-project-review" class="anchor" href="#gnc-project-review" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><em>GNC project review</em>
+</h1>
+
+<p><a href="/review/rus.html" title="Russian">Russian</a> |
+<a href="/review/eng.html" title="English">English</a></p>
+
+<h2>
+<a id="architecture" class="anchor" href="#architecture" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Architecture</h2>
+
+<ul>
+<li>CMSBundle:
+
+<ul>
+<li>Controller breakdown - <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/CmsBundle/Controller/?at=master">Good</a>
+</li>
+<li>Views breakdown - <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/CmsBundle/Resources/views/?at=master">Good</a>
+</li>
+<li>Business logic layer missing - <a href="https://sites.google.com/site/dhntclub/thiet-ke-web-site/trao-doi/the-m-in-mvc-why-models-are-misunderstood-and-unappreciated">Bad</a>
+</li>
+</ul>
+</li>
+<li>ExchangerBundle:
+
+<ul>
+<li>Controller breakdown - <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/ExchangerBundle/Controller/?at=master">Good</a>
+</li>
+<li>Views breakdown - <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/ExchangerBundle/Resources/views/?at=master">Good</a>
+</li>
+<li>Reusable forms - <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/ExchangerBundle/Form/Type/?at=master">Good</a>
+</li>
+<li>Business logic layer missing - <a href="https://sites.google.com/site/dhntclub/thiet-ke-web-site/trao-doi/the-m-in-mvc-why-models-are-misunderstood-and-unappreciated">Bad</a>
+</li>
+</ul>
+</li>
+<li>MainBundle:
+
+<ul>
+<li>Controller breakdown - <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/MainBundle/Controller/?at=master">Bad</a>
+</li>
+<li>Views breakdown - <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/MainBundle/Resources/views/?at=master">Good</a>
+</li>
+<li>Business logic layer missing - <a href="https://sites.google.com/site/dhntclub/thiet-ke-web-site/trao-doi/the-m-in-mvc-why-models-are-misunderstood-and-unappreciated">Bad</a>
+</li>
+</ul>
+</li>
+<li>UserBundle:
+
+<ul>
+<li>Controller breakdown - <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/UserBundle/Controller/?at=master">Good</a>
+</li>
+<li>Views breakdown - <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/UserBundle/Resources/views/?at=master">Good</a>
+</li>
+<li>Reusable forms - <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/UserBundle/Form/Type/?at=master">Good</a>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>Summary: Classic symfony2 namespacing convention is used, which helps to understand the structure of the project immediately. Functionality is splitted between 4 bundles, each responsible for a major application parts, helps for easy navigation. Looks like controllers contain business logic, which is bad for code reuse, testability and maintainability</p>
+
+<h2>
+<a id="tests" class="anchor" href="#tests" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tests</h2>
+
+<ul>
+<li>Unit tests missing - Bad</li>
+<li>Integration tests missing - Bad</li>
+<li>UI tests missing - Bad</li>
+</ul>
+
+<h2>
+<a id="code-quality" class="anchor" href="#code-quality" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Code quality</h2>
+
+<ul>
+<li>### <a href="/gnc/review/report.html">Static analysys</a>
+</li>
+<li>### Backend
+
+<ul>
+<li>Using json files instead of a keyvalue/database storage - Bad <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/ExchangerBundle/Controller/RateController.php?at=master&amp;fileviewer=file-view-default#RateController.php-38">1</a>
+</li>
+<li>Routing configuration properly structured and commented - Good <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/CmsBundle/Resources/config/routing.yml?at=master&amp;fileviewer=file-view-default">1</a> <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/CmsBundle/Resources/config/routing.yml?at=master&amp;fileviewer=file-view-default">2</a> <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/MainBundle/Resources/config/routing.yml?at=master&amp;fileviewer=file-view-default">3</a> <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/UserBundle/Resources/config/routing.yml?at=master&amp;fileviewer=file-view-default">4</a>
+</li>
+<li>No separation for admin and user routes - Bad <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/CmsBundle/Resources/config/routing.yml?at=master&amp;fileviewer=file-view-default#routing.yml-41">1</a> <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/CmsBundle/Resources/config/routing.yml?at=master&amp;fileviewer=file-view-default#routing.yml-21">2</a>
+</li>
+<li>Fat controllers, not models - <a href="https://sites.google.com/site/dhntclub/thiet-ke-web-site/trao-doi/the-m-in-mvc-why-models-are-misunderstood-and-unappreciate">Really bad</a>
+</li>
+<li>Inconsistent spacing and formatting - Really bad</li>
+<li>Non-descriptive naming - Bad <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/UserBundle/Controller/DefaultController.php?at=master&amp;fileviewer=file-view-default#DefaultController.php-11">1</a> <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/MainBundle/Controller/DefaultController.php?at=master&amp;fileviewer=file-view-default">2</a>
+</li>
+<li>Configuration in properties - <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/CmsBundle/Controller/BlogController.php?at=master&amp;fileviewer=file-view-default#BlogController.php-12">Bad</a>
+</li>
+<li>Pagination logic is duplicated in all controller methods - Really bad <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/CmsBundle/Controller/BlogController.php?at=master&amp;fileviewer=file-view-default#BlogController.php-128">1</a> <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/CmsBundle/Controller/BlogController.php?at=master&amp;fileviewer=file-view-default#BlogController.php-35">2</a> <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/CmsBundle/Controller/BlogController.php?at=master&amp;fileviewer=file-view-default#BlogController.php-162">3</a> <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/CmsBundle/Controller/CommentController.php?at=master&amp;fileviewer=file-view-default#CommentController.php-470">4</a>
+</li>
+<li>Repositories are accessed through EntityManager - Bad <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/CmsBundle/Controller/CommentController.php?at=master&amp;fileviewer=file-view-default#CommentController.php-466">1</a> <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/CmsBundle/Controller/PageController.php?at=master&amp;fileviewer=file-view-default#PageController.php-76">1</a> <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/CmsBundle/Controller/PageController.php?at=master&amp;fileviewer=file-view-default#PageController.php-66">2</a> <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/CmsBundle/Controller/WikiPageController.php?at=master&amp;fileviewer=file-view-default#WikiPageController.php-40">3</a>
+</li>
+<li>Forms defined in controller action - Bad <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/CmsBundle/Controller/WikiPageController.php?at=master&amp;fileviewer=file-view-default#WikiPageController.php-126">1</a> <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/CmsBundle/Controller/FaqController.php?at=master&amp;fileviewer=file-view-default#FaqController.php-44">2</a> <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/ExchangerBundle/Controller/ExchangerAdminController.php?at=master&amp;fileviewer=file-view-default#ExchangerAdminController.php-70">3</a> <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/ExchangerBundle/Controller/RatingController.php?at=master&amp;fileviewer=file-view-default#RatingController.php-19">4</a>
+</li>
+</ul>
+</li>
+<li>
+<h3>
+<a id="front-end" class="anchor" href="#front-end" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Front end</h3>
+
+<ul>
+<li>Clean and tidy html.twig templates - Good</li>
+<li>Using CSS selectors for javascript behaviour - Bad <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/MainBundle/Resources/public/js/apps-onepage.js?at=master&amp;fileviewer=file-view-default">1</a> <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/MainBundle/Resources/public/js/apps.js?at=master&amp;fileviewer=file-view-default">2</a>
+</li>
+<li>Duplication - Bad <a href="https://bitbucket.org/anizhegorodov/gnc/src/076ae3359be79aaeb2c58ff4fe234901d13b02f1/src/goChange/MainBundle/Resources/public/js/apps-onepage.js?at=master&amp;fileviewer=file-view-default">1</a>
+</li>
+</ul>
+</li>
+<li>
+<h2>
+<a id="recommendations" class="anchor" href="#recommendations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Recommendations</h2>
+
+<ul>
+<li>Improvements priority
+
+<ul>
+<li>Pick coding standard and reformat code according to it</li>
+<li>Move database operations to repositories</li>
+<li>Move form definitions into separate classes</li>
+<li>Make controllers thin by providing the business logic it's own place</li>
+<li>Put rates into keyvalue/database storage for faster reads</li>
+<li>Refactor jquery spagetti</li>
+</ul>
+</li>
+</ul>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c">// Before</span>
+<span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>#btn-toggle-nav<span class="pl-pds">"</span></span>).<span class="pl-c1">click</span>(<span class="pl-k">function</span>(){
+    <span class="pl-s"><span class="pl-pds">"</span>use strict<span class="pl-pds">"</span></span>;
+    <span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>.menus<span class="pl-pds">"</span></span>).<span class="pl-en">toggleClass</span>(<span class="pl-s"><span class="pl-pds">"</span>toggle-nav<span class="pl-pds">"</span></span>);
+});
+
+<span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>#nav-icon-search<span class="pl-pds">"</span></span>).<span class="pl-c1">click</span>(<span class="pl-k">function</span>(){
+    <span class="pl-s"><span class="pl-pds">"</span>use strict<span class="pl-pds">"</span></span>;
+    <span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>#search-sub<span class="pl-pds">"</span></span>).<span class="pl-en">toggleClass</span>(<span class="pl-s"><span class="pl-pds">"</span>visible<span class="pl-pds">"</span></span>);
+});
+<span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>#nav-icon-phone<span class="pl-pds">"</span></span>).<span class="pl-c1">click</span>(<span class="pl-k">function</span>(){
+    <span class="pl-s"><span class="pl-pds">"</span>use strict<span class="pl-pds">"</span></span>;
+    <span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>#phone-sub<span class="pl-pds">"</span></span>).<span class="pl-en">toggleClass</span>(<span class="pl-s"><span class="pl-pds">"</span>visible<span class="pl-pds">"</span></span>);
+});
+
+<span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>#btn-icon-search<span class="pl-pds">"</span></span>).<span class="pl-c1">click</span>(<span class="pl-k">function</span>(){
+    <span class="pl-s"><span class="pl-pds">"</span>use strict<span class="pl-pds">"</span></span>;
+    <span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>#search-sub<span class="pl-pds">"</span></span>).<span class="pl-en">toggleClass</span>(<span class="pl-s"><span class="pl-pds">"</span>visible<span class="pl-pds">"</span></span>);
+});
+<span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>#btn-icon-phone<span class="pl-pds">"</span></span>).<span class="pl-c1">click</span>(<span class="pl-k">function</span>(){
+    <span class="pl-s"><span class="pl-pds">"</span>use strict<span class="pl-pds">"</span></span>;
+    <span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>#phone-sub<span class="pl-pds">"</span></span>).<span class="pl-en">toggleClass</span>(<span class="pl-s"><span class="pl-pds">"</span>visible<span class="pl-pds">"</span></span>);
+});</pre></div>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c">// After</span>
+<span class="pl-en">$</span>(<span class="pl-c1">document</span>).<span class="pl-en">on</span>(<span class="pl-s"><span class="pl-pds">'</span>click<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>.js-class-toggle<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>() {
+    <span class="pl-k">var</span> $<span class="pl-v">this</span> <span class="pl-k">=</span> <span class="pl-en">$</span>(<span class="pl-v">this</span>);
+    <span class="pl-k">var</span> classToToggle <span class="pl-k">=</span> <span class="pl-smi">$this</span>.<span class="pl-c1">data</span>(<span class="pl-s"><span class="pl-pds">'</span>toggle-class<span class="pl-pds">'</span></span>);
+    <span class="pl-k">var</span> targetSelector <span class="pl-k">=</span> <span class="pl-smi">$this</span>.<span class="pl-c1">data</span>(<span class="pl-s"><span class="pl-pds">'</span>toggle-target<span class="pl-pds">'</span></span>);
+    <span class="pl-en">$</span>(targetSelector).<span class="pl-en">each</span>(<span class="pl-k">function</span>(<span class="pl-smi">index</span>, <span class="pl-smi">element</span>) {
+        <span class="pl-en">$</span>(element).<span class="pl-en">toggleClass</span>(classToToggle);
+    });
+});</pre></div>
+</li>
+</ul>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/an1zhegorodov/gnc">Gnc</a> is maintained by <a href="https://github.com/an1zhegorodov">an1zhegorodov</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
